@@ -3,14 +3,14 @@ class Dog:
         self.name=name
         print(name)
     def breed(self,which):
-	    return which
+	return which
     def bark(self):
         print("woof") 
     def legs(self,x):
         return x
     def eat(self, food):
-	    return food
-	    return food
+	return food
+	return food
 d1= Dog("ruby")
 print(type(d1))
 d1.bark()
