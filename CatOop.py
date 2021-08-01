@@ -9,7 +9,11 @@ class Pet:
     def speak(self):
         print("Shall I just say ") 
 
-class Cat(Pet):      
+class Cat(Pet):
+
+    def __init__(self,name,age,color):
+        super().__init__(name,age)
+        self.color=color      
     def speak(self):
         print("Meow!")
 
