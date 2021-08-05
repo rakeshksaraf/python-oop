@@ -8,7 +8,9 @@ class Point:
     def getY(self):
         return self.y
     def __str__(self):
-        return f"point is at ({self.x},{self.y})" # use self.x not getX() here.
+        return f"Point is at ({self.x},{self.y})" # use self.x not getX() here.
+    def __sub__(self,otherPoint):
+        return Point(self.x-otherPoint.x,self.y-otherPoint.y)
     
     def distance_origin(self):
         d=(self.x**2+self.y**2)**.5
@@ -21,3 +23,4 @@ print(p1)
 print(p1.x)
 print(p1.distance_origin())
 print(p1.distance(p2))
+print(p1-p2)
