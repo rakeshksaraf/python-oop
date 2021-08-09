@@ -1,9 +1,9 @@
 # The user will have a list of pets, each with a name. The user can issue a command to adopt a new pet, 
 # which will create a new instance of Pet. Or the user can interact with an existing pet, with a Greet, Teach, or Feed command.
 
-from Pet import Pet # if in same folder then import class from the file in which it was declared 
+from tamagotchi import Pet # if in same folder then import class from the file in which it was declared 
 import sys
-sys.setrecursionlimitAd(60000)
+sys.setrecursionlimit(60000)
 
 def whichone(petlist, name):
     for pet in petlist:
