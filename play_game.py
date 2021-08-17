@@ -3,13 +3,8 @@
 
 from tamagotchi import Pet # if in same folder then import class from the file in which it was declared 
 import sys
+from tamagotchi import *
 sys.setrecursionlimit(60000)
-
-def whichone(petlist, name):
-    for pet in petlist:
-        if pet.name == name:
-            return pet
-    return None # no pet matched
 
 def play():
     animals = []
@@ -17,7 +12,7 @@ def play():
     option = ""
     base_prompt = """
         Quit
-        Adopt <petname_with_no_spaces_please>
+        Adopt <petname_with_no_spaces> <pet_type - choose dog, cat, lab, poodle, bird, or another unknown pet type>
         Greet <petname>
         Teach <petname> <word>
         Feed <petname>
@@ -39,7 +34,13 @@ def play():
             if whichone(animals, words[1]):
                 feedback += "You already have a pet with that name\n"
             else:
-                animals.append(Pet(words[1]))
+                # figure out which class it should be
+                if len(words) > 2:
+                    Cl = whichtype(words[2])
+                else:
+                    Cl = Pet
+                # Make an instance of that class and append it
+                animals.append(Cl(words[1]))
         elif command == "Greet" and len(words) > 1:
             pet = whichone(animals, words[1])
             if not pet:
@@ -66,6 +67,5 @@ def play():
             pet.clock_tick()
             feedback += "\n" + pet.__str__()
 
-
-
+play()
 play()
