@@ -26,7 +26,7 @@ class Pet:
             return "bored"
 
     def __str__(self):
-        return f" I am {self.name} and I am {self.mood}"
+        return f" I am {self.name} and I am {self.mood()}"
 
     def update_boredom(self):
         self.boredom=self.boredom-self.boredom_decrement
@@ -35,7 +35,7 @@ class Pet:
         self.hunger=self.hunger-self.hunger_decrement
         return self.boredom
     def hi(self):
-        print(choice(self.sounds()))
+        print(choice(self.sounds))
         self.update_boredom()
     def teach(self,word):
         self.sounds.append(word)
